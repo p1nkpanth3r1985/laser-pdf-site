@@ -1,0 +1,4 @@
+{
+ "payload": "{\"app\":\"laser-pdf\",\"version\":\"1.14.0\",\"date\":\"2026-10-17\",\"notes\":[\"A clearer layout: the modes are down the left, with Check report as its own place\",\"The report checker opens as a review workspace with a wide findings panel\",\"Tool hints moved to the status bar\"],\"mac\":{\"url\":\"https://p1nkpanth3r1985.github.io/laser-pdf-site/downloads/Laser-PDF-1.14.0.pkg\",\"size\":22560697,\"sha256\":\"edaebec318f8a380a5d86dacd1a22793ccf02d8e2458456893205af0a46b5df4\"},\"win\":{\"url\":\"https://p1nkpanth3r1985.github.io/laser-pdf-site/downloads/Laser-PDF-Setup-1.14.0.exe\",\"size\":18315867,\"sha256\":\"5feefe70c8720593845ce9d188571557c8ba340cf3c721c0b2dd69315c78ef3d\"}}",
+ "sig": "e2S6resRP6o9qZ1rSqXRq/mnoHStwRa/XQoBVonbRzNC43sNMi9Tbx5DstVu7jdJGjwGILXLR2tTS/WyLhRqCQ=="
+}
