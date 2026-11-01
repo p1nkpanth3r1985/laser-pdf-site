@@ -125,6 +125,27 @@ footer nav { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; } foo
 }
 @media (prefers-reduced-motion: no-preference) { .finds li { animation: rise .5s both; } .finds li:nth-child(2) { animation-delay: .08s; } .finds li:nth-child(3) { animation-delay: .16s; } .finds li:nth-child(4) { animation-delay: .24s; } .finds li:nth-child(5) { animation-delay: .32s; } }
 @keyframes rise { from { transform: translateY(6px); } to { transform: none; } }
+.fo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.focol { border: 1px solid var(--line, #e3e3ea); border-radius: 16px; padding: 20px 22px; background: var(--card, #fff); }
+.focol h3 { margin: 0 0 10px; }
+.fosteps { margin: 0; padding-left: 20px; display: grid; gap: 14px; font-size: 14px; line-height: 1.5; }
+.fonote { margin: 14px 0 0; font-size: 12.5px; color: var(--mute, #6b6b78); }
+.fomac, .foset, .foedge, .fowin { margin-top: 8px; font: 12px/1.4 -apple-system, "Segoe UI", system-ui, sans-serif; color: #1d1d1f; max-width: 360px; }
+.fomac { background: #ececee; border-radius: 12px; padding: 14px 14px 10px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+.fomac-ic { width: 30px; height: 30px; margin: 0 auto 6px; border-radius: 8px; background: #f5b400; color: #fff; font-weight: 800; line-height: 30px; }
+.fomac p { margin: 4px 0 8px; color: #4a4a50; }
+.fobtns { display: flex; gap: 6px; justify-content: center; }
+.fob { display: inline-block; white-space: nowrap; padding: 3px 12px; border-radius: 6px; background: #fff; border: 1px solid #c9c9cf; font-weight: 600; }
+.fob.dark { background: #2b2b2b; color: #fff; border-color: #555; }
+.hl { outline: 3px solid #e11d48; outline-offset: 2px; border-radius: 6px; }
+.foset { display: flex; align-items: center; gap: 10px; justify-content: space-between; background: #f5f5f7; border: 1px solid #ddd; border-radius: 10px; padding: 10px 12px; }
+.foedge { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 8px 10px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.foedge span:first-child { flex: 1; }
+.fowin { background: #0f67b1; color: #fff; padding: 14px 16px; border-radius: 4px; }
+.fowin b { font-size: 15px; } .fowin p { margin: 6px 0; opacity: .95; }
+.fowin .folink { text-decoration: underline; display: inline-block; margin-bottom: 10px; }
+.fowin .fobtns { justify-content: flex-end; }
+@media (max-width: 760px) { .fo { grid-template-columns: 1fr; } }
 </style>
 
 <header class="hero">
@@ -228,7 +249,7 @@ footer nav { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; } foo
 
   <section id="download" class="wrap">
     <div class="head">
-      <p class="eyebrow">Download · version <span id="ver">1.32.0</span></p>
+      <p class="eyebrow">Download · version <span id="ver">1.33.0</span></p>
       <h2>Download LaserCheck</h2>
       <p>Free to use for now, with everything switched on. No card, no sign-up, nothing to activate.</p>
     </div>
@@ -236,14 +257,14 @@ footer nav { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; } foo
       <div class="dlc">
         <h3>Mac</h3>
         <p class="meta">Apple silicon and Intel Macs</p>
-        <a class="btn primary" href="downloads/LaserCheck-1.32.0.pkg" id="dl-mac">Download for Mac</a>
-        <details><summary>Installing on a Mac</summary><p>Open the downloaded file. The first time, macOS may say it can’t check it: open <b>System Settings › Privacy &amp; Security</b> and click <b>Open Anyway</b>, then <b>Install</b>. The installer downloads the app’s runtime (about 100 MB), so stay online for a minute or two.</p></details>
+        <a class="btn primary" href="downloads/LaserCheck-1.33.0.pkg" id="dl-mac">Download for Mac</a>
+        <p class="note" style="margin:0"><a href="#firstopen">Opening it the first time</a></p>
       </div>
       <div class="dlc">
         <h3>Windows</h3>
         <p class="meta">Windows 10 or 11 · no administrator rights needed</p>
-        <a class="btn primary" href="downloads/LaserCheck-Setup-1.32.0.exe" id="dl-win">Download for Windows</a>
-        <details><summary>Installing on Windows</summary><p>Run the downloaded file. If Windows shows “Windows protected your PC”, click <b>More info</b>, then <b>Run anyway</b>. Setup downloads the app’s runtime (about 120 MB) and checks it, so stay online for a minute or two.</p></details>
+        <a class="btn primary" href="downloads/LaserCheck-Setup-1.33.0.exe" id="dl-win">Download for Windows</a>
+        <p class="note" style="margin:0"><a href="#firstopen">Opening it the first time</a></p>
       </div>
       <div class="dlc">
         <h3>LaserCheck Lite</h3>
@@ -252,6 +273,32 @@ footer nav { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; } foo
         <p class="note" style="margin:0">A free viewer that runs in a web page, offline once loaded. It doesn’t edit or save, and doesn’t include the report checker.</p>
       </div>
     </div>
+    <div class="head" id="firstopen" style="margin-top:36px"><h2>Opening it the first time</h2><p>Mac and Windows both ask once before running a newly downloaded app. This is what you’ll see, and what to click.</p></div>
+<div class="fo">
+  <div class="focol">
+    <h3>On a Mac</h3>
+    <ol class="fosteps">
+      <li><b>Open the downloaded file.</b> The first time, macOS says it can’t check it. Click <b>Done</b>.
+        <div class="fomac" aria-hidden="true"><div class="fomac-ic">!</div><b>“LaserCheck.pkg” Not Opened</b><p>Apple could not verify “LaserCheck.pkg” is free of malware…</p><div class="fobtns"><span class="fob">Move to Bin</span><span class="fob hl">Done</span></div></div></li>
+      <li><b>Open System Settings › Privacy &amp; Security</b>, scroll down, and click <b>Open Anyway</b>, then enter your password.
+        <div class="foset" aria-hidden="true"><span>“LaserCheck.pkg” was blocked to protect your Mac.</span><span class="fob hl">Open Anyway</span></div></li>
+      <li><b>Install as usual.</b> LaserCheck goes in Applications. You only do this once: updates install without asking.</li>
+    </ol>
+    <p class="fonote">On older macOS, you can instead right-click the file and choose <b>Open</b>. Updating from Laser PDF? Open <b>LaserCheck</b> from Applications once afterwards.</p>
+  </div>
+  <div class="focol">
+    <h3>On Windows</h3>
+    <ol class="fosteps">
+      <li><b>If your browser says the file isn’t commonly downloaded,</b> choose <b>Keep</b> (in Edge: the ⋯ menu, then <b>Keep</b>, then <b>Keep anyway</b>).
+        <div class="foedge" aria-hidden="true"><span>LaserCheck-Setup.exe isn’t commonly downloaded.</span><span class="fob">Delete</span><span class="fob hl">Keep</span></div></li>
+      <li><b>Run the file.</b> If a blue box says <b>Windows protected your PC</b>, click <b>More info</b>, then <b>Run anyway</b>.
+        <div class="fowin" aria-hidden="true"><b>Windows protected your PC</b><p>Microsoft Defender SmartScreen prevented an unrecognised app from starting…</p><span class="folink hl">More info</span><div class="fobtns"><span class="fob dark hl">Run anyway</span><span class="fob dark">Don’t run</span></div></div></li>
+      <li><b>Setup finishes on its own</b>, with no administrator rights needed. You only do this once: updates install without asking.</li>
+    </ol>
+    <p class="fonote">These warnings appear because LaserCheck isn’t yet signed with a paid Apple or Microsoft certificate. It’s the same app either way.</p>
+  </div>
+</div>
+
   </section>
 </main>
 
